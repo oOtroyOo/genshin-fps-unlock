@@ -11,6 +11,10 @@
  - Free code signing provided by [SignPath.io](https://signpath.io/)
  ## Compiling
  - Use Visual Studio 2022 Community Edition to compile
+
+ ### Cross Compiling on GNU/Linux
+ You need [dotnet-8 SDK for Linux](https://dotnet.microsoft.com/en-us/download/dotnet) for .NET apps and x86_64-w64-mingw32 tool-chain for compiling the [[UnlockerStub/dllmain.cpp]] to ddl. Take Debian as an example, `apt install mingw-w64` installs the MinGW tool-chain. Finally, use `make` to build.
+
  ## Usage
  - Make sure you have the [.NET Desktop Runtime 8.0.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.0-windows-x64-installer) (Usually it should come installed)
  - Run the exe and click 'Start Game'
@@ -39,6 +43,10 @@
 
 ## 编译
  - 用VS2022编译
+
+### GNU/Linux 上交叉编译
+见 [Cross Compiling on GNU/Linux](#cross-compiling-on-gnulinux)
+
 ## 食用指南
  - 运行前确保系统已安装[.NET Desktop Runtime 8.0.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.0-windows-x64-installer) (一般来说系统自带就有)
  - 第一次运行的话先以管理员运行，解锁器会尝试通过注册表寻找游戏路经，如果找不到的话会提示你浏览游戏位置或者开启游戏
