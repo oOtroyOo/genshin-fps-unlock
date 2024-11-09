@@ -13,7 +13,7 @@
  - Use Visual Studio 2022 Community Edition to compile
 
  ### Cross Compiling on GNU/Linux
- You need [dotnet-8 SDK for Linux](https://dotnet.microsoft.com/en-us/download/dotnet) for .NET apps and x86_64-w64-mingw32 tool-chain for compiling the [[UnlockerStub/dllmain.cpp]] to ddl. Take Debian as an example, `apt install mingw-w64` installs the MinGW tool-chain. Finally, use `make` to build.
+ You need [dotnet-8 SDK for Linux](https://dotnet.microsoft.com/en-us/download/dotnet) for .NET apps and x86_64-w64-mingw32 tool-chain for compiling the UnlockerStub to dll. Take Debian as an example, `apt install mingw-w64` installs the MinGW tool-chain. Finally, use `make` to build.
 
  ## Usage
  - Make sure you have the [.NET Desktop Runtime 8.0.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.0-windows-x64-installer) (Usually it should come installed)
