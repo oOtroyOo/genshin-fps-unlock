@@ -115,18 +115,19 @@ namespace unlockfps_nc.Service
             Native.GetWindowThreadProcessId(hWnd, out var pid);
             _gameInForeground = pid == _gamePid;
 
-            if (!_config.UsePowerSave)
-                return;
-
-            uint targetPriority = _gameInForeground ? PriorityClass[_config.Priority] : 0x00000040;
-            Native.SetPriorityClass(_gameHandle, targetPriority);
-
             if (_gameInForeground && _unityWnd == IntPtr.Zero)
             {
                 _unityWnd = hWnd;
                 if (_config.PopupWindow && _config.UseCustomRes && _config.CustomMoveX > -1 && _config.CustomMoveY > -1)
                     Native.MoveWindow(_unityWnd, _config.CustomMoveX, _config.CustomMoveY, _config.CustomResX, _config.CustomResY, true);
             }
+
+            if (!_config.UsePowerSave)
+                return;
+
+            uint targetPriority = _gameInForeground ? PriorityClass[_config.Priority] : 0x00000040;
+            Native.SetPriorityClass(_gameHandle, targetPriority);
+
         }
 
         private bool IsGameRunning()
