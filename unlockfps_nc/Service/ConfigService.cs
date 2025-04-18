@@ -22,12 +22,17 @@ namespace unlockfps_nc.Service
 
         private void Load()
         {
-            if (!File.Exists(ConfigName))
+            string configFile = ConfigName;
+            if (Environment.GetCommandLineArgs().Length > 1)
+            {
+                configFile = Environment.GetCommandLineArgs()[1];
+            }
+            if (!File.Exists(configFile))
                 return;
 
             try
             {
-                var json = File.ReadAllText(ConfigName);
+                var json = File.ReadAllText(configFile);
                 Config = JsonConvert.DeserializeObject<Config>(json);
             }
             catch (Exception)

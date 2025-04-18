@@ -1,0 +1,1 @@
+dotnet publish unlockfps_nc -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
